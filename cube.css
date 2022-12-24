@@ -1,0 +1,169 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(#6af, #9df, #bae4f8);
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    perspective: 800px;
+    perspective-origin: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.platForm {
+    width: 100%;
+    height: 640px;
+}
+
+.myCube {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    top: 20%;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+    animation: rotateCube 15s linear infinite;
+}
+
+@keyframes rotateCube {
+    0% {
+        transform: rotateX(-30deg) rotateY(360deg);
+    }
+
+    100% {
+        transform: rotateX(-30deg) rotateY(0deg);
+    }
+}
+
+#one,
+#two,
+#three,
+#four,
+#five,
+#six {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 5px;
+    transition: all 1s;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+#one {
+    transform: rotateX(90deg) translateZ(100px);
+}
+
+#two {
+    transform: translateZ(100px);
+}
+
+#three {
+    transform: rotateY(90deg) translateZ(100px);
+}
+
+#four {
+    transform: rotateY(180deg) translateZ(100px);
+}
+
+#five {
+    transform: rotateY(-90deg) translateZ(100px);
+}
+
+#six {
+    transform: rotateX(-90deg) translateZ(190px);
+    opacity: 0.5;
+}
+
+.myCube.toggleShape #one {
+    transform: translateZ(220px);
+    -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, #0004);
+}
+
+.myCube.toggleShape #two {
+    transform: rotateY(60deg) translateZ(220px);
+    -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, #0004);
+}
+
+.myCube.toggleShape #three {
+    transform: rotateY(120deg) translateZ(220px);
+    -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, #0004);
+}
+
+.myCube.toggleShape #four {
+    transform: rotateY(180deg) translateZ(220px);
+    -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, #0004);
+}
+
+.myCube.toggleShape #five {
+    transform: rotateY(-120deg) translateZ(220px);
+    -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, #0004);
+}
+
+.myCube.toggleShape #six {
+    transform: rotateY(-60deg) translateZ(220px);
+    opacity: 1;
+    -webkit-box-reflect: below 0 linear-gradient(transparent, transparent, #0004);
+}
+
+.wrap {
+    position: absolute;
+    top: 85%;
+}
+
+.button {
+    width: 150px;
+    height: 30px;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: black;
+    background: linear-gradient(90deg, rgb(58, 219, 219) 0%, rgb(23, 219, 209) 100%);
+    border: none;
+    border-radius: 1000px;
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+}
+
+.wrap::before {
+    content: '';
+    border-radius: 50%;
+    border: 6px solid #00ccff;
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: ring 3s infinite;
+}
+
+@keyframes ring {
+    0% {
+        width: 0px;
+        height: 0px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 150px;
+        height: 150px;
+        opacity: 0;
+    }
+}

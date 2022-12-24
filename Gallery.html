@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merry Christmas</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="cube.css">
+    <link rel="stylesheet" href="transition.css">
+</head>
+
+<body>
+
+    <div class="transition transition-1 active"></div>
+
+    <div class="container">
+        <div class="platForm">
+            <div class="myCube toggleShape" id="myCube">
+                <div id="one"><img src="t1.jpg"></div>
+                <div id="two"><img src="t2.jpg"></div>
+                <div id="three"><img src="t3.jpg"></div>
+                <div id="four"><img src="t4.jpg"></div>
+                <div id="five"><img src="t5.jpg"></div>
+                <div id="six"><img src="t6.jpg"></div>
+            </div>
+        </div>
+        <div class="wrap">
+            <button class="button" id="toggleShape">Toggle Shape</button>
+        </div>
+    </div>
+    <script>
+        var toggleShape = document.getElementById('toggleShape');
+        toggleShape.addEventListener('click', function () {
+            myCube.classList.toggle('toggleShape');
+        });
+    </script>
+    <script src="main.js"></script>
+</body>
+
+</html>

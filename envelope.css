@@ -1,0 +1,127 @@
+body {
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgb(50, 238, 66), rgb(88, 240, 83), #6fe074);
+}
+
+h1 {
+    font-size: 32px;
+    color: #de2f32;
+}
+
+#letter {
+    position: relative;
+    text-align: center;
+    animation: up 3s linear infinite;
+}
+
+@keyframes up {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+.card {
+    width: 0;
+    height: 0;
+    border-top: 100px solid #eee;
+    border-right: 170px solid #ddd;
+    border-bottom: 100px solid #ddd;
+    border-left: 170px solid #ccc;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.shadow {
+    position: relative;
+    width: 360px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.3);
+    animation: scale 3s linear infinite;
+}
+
+@keyframes scale {
+
+    0%,
+    100% {
+        transform: scaleX(1);
+    }
+
+    50% {
+        transform: scaleX(0.85);
+    }
+}
+
+.heart {
+    width: 32px;
+    height: 32px;
+    background-color: #ff3838;
+    transform: translate(-50%, -50%) rotate(45deg);
+    animation: heartbeat 1.5s linear infinite;
+}
+
+.heart::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff3838;
+    transform: translateY(-50%);
+    border-radius: 50%;
+}
+
+.heart::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff3838;
+    transform: translateX(-50%);
+    border-radius: 50%;
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+
+    25% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+
+    30% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1.4);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
+    }
+
+    70% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1.4);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) rotate(45deg) scale(1);
+    }
+}
